@@ -72,10 +72,6 @@ const ProductDetails = () => {
             voluptatem ut mollitia dolorum in voluptatibus officiis ea maiores
             praesentium eum iusto consequatur. Aut accusamus expedita qui saepe
             aliquid et iste consectetur ut quam explicabo in accusantium
-            nesciunt et inventore nobis aut dignissimos nesciunt. Vel asperiores
-            sequi sit assumenda aliquid et labore voluptates non Quis
-            consequatur vel incidunt aspernatur et molestias magni aut totam
-            tenetur.
           </Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
