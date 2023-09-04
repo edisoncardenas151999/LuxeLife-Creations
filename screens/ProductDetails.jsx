@@ -9,8 +9,12 @@ import {
 } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 
 const ProductDetails = () => {
+  const route = useRoute();
+  const { item } = route.params;
+
   const [count, setCount] = useState(1);
   const navigation = useNavigation();
 
@@ -35,7 +39,7 @@ const ProductDetails = () => {
 
       <Image
         source={{
-          uri: "https://johnlewis.scene7.com/is/image/JohnLewis/furnitureandlight-livingroom-carousel-gb-010323",
+          uri: item.imageUrl,
         }}
         style={styles.images}
       />
@@ -43,7 +47,7 @@ const ProductDetails = () => {
         <View style={styles.titleRow}>
           <Text style={styles.title}>Product</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$600.00 </Text>
+            <Text style={styles.price}>{item.price}</Text>
           </View>
         </View>
         <View style={styles.ratingRow}>
@@ -67,18 +71,13 @@ const ProductDetails = () => {
         </View>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>description</Text>
-          <Text style={styles.descriptionText}>
-            Lorem ipsum dolor sit amet. Sed quia repudiandae est minus
-            voluptatem ut mollitia dolorum in voluptatibus officiis ea maiores
-            praesentium eum iusto consequatur. Aut accusamus expedita qui saepe
-            aliquid et iste consectetur ut quam explicabo in accusantium
-          </Text>
+          <Text style={styles.descriptionText}>{item.description}</Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
             <View style={{ flexDirection: "row" }}>
               <Ionicons name="location-outline" size={20} />
-              <Text> Dallas </Text>
+              <Text> {item.product_location}</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <MaterialCommunityIcons name="truck-delivery-outline" size={20} />

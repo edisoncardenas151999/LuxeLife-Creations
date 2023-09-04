@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   headerTitle: {
-    fontFamily: "semibold",
+    // fontFamily: "semibold",
     fontSize: SIZES.xLarge - 2,
   },
 });

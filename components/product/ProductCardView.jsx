@@ -5,28 +5,30 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 
-const ProductCardView = () => {
+const ProductCardView = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("ProductDetails", { item })}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: "https://johnlewis.scene7.com/is/image/JohnLewis/furnitureandlight-livingroom-carousel-gb-010323",
+              uri: item.imageUrl,
             }}
             style={styles.image}
           />
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            sofa
+            {item.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            apple
+            {item.supplier}
           </Text>
           <Text style={styles.price} numberOfLines={1}>
-            $23
+            ${item.price}
           </Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>
